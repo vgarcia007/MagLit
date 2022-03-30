@@ -27,6 +27,7 @@ COPY --from=BUILD_IMAGE --chown=nextjs:nodejs /app/package.json /app/yarn.lock .
 COPY --from=BUILD_IMAGE --chown=nextjs:nodejs /app/node_modules ./node_modules
 COPY --from=BUILD_IMAGE --chown=nextjs:nodejs /app/public ./public
 COPY --from=BUILD_IMAGE --chown=nextjs:nodejs /app/.next ./.next
+COPY --from=BUILD_IMAGE --chown=nextjs:nodejs /app/next.config.js  ./
 
 USER nextjs
 
